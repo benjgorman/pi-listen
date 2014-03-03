@@ -10,7 +10,8 @@ and writes to standard output for 5 seconds of data.
 
 #include <alsa/asoundlib.h>
 
-int main() {
+int main() 
+{
   long loops;
   int rc;
   int size;
@@ -22,7 +23,7 @@ int main() {
   char *buffer;
 
   /* Open PCM device for recording (capture). */
-  rc = snd_pcm_open(&handle, "default", SND_PCM_STREAM_CAPTURE, 0);
+  rc = snd_pcm_open(&handle, "plughw:1,0", SND_PCM_STREAM_CAPTURE, 0);
   if (rc < 0) 
   {
     fprintf(stderr,"unable to open pcm device: %s\n",snd_strerror(rc));
