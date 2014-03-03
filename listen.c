@@ -72,12 +72,14 @@ int main()
   snd_pcm_hw_params_get_period_time(params, &val, &dir);
   loops = 5000000 / val;
 
-  while (loops > 0) {
+  
+
+  /* while (loops > 0) {
     loops--;
     rc = snd_pcm_readi(handle, buffer, frames);
     if (rc == -EPIPE) 
     {
-      /* EPIPE means overrun */
+      
       fprintf(stderr, "overrun occurred\n");
       snd_pcm_prepare(handle);
     } 
@@ -97,9 +99,14 @@ int main()
     }
   }
 
+  */
+
+
   snd_pcm_drain(handle);
   snd_pcm_close(handle);
   free(buffer);
+
+  
 
   return 0;
 }
