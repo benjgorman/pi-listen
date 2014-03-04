@@ -74,7 +74,8 @@ int main()
 
   
 
-  /* while (loops > 0) {
+  while (loops > 0) 
+  {
     loops--;
     rc = snd_pcm_readi(handle, buffer, frames);
     if (rc == -EPIPE) 
@@ -99,7 +100,7 @@ int main()
     }
   }
 
-  */
+  
 
 
   snd_pcm_drain(handle);
